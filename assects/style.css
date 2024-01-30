@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(29, 26, 28);
-    color: rgb(115, 92, 252);
+    background-color: var(--mc-bgColor);
+    color: var(--mc-fontColor);
     font-family: Poppins, sans-serif;
     padding-left: 20px;
     padding-right: 20px;
@@ -9,9 +9,16 @@ body {
 :root {
     --mc-baseContrast: #000;
     --mc-baseContrast-o0: rgba(0, 0, 0, 0);
+    --mc-bgColor:rgb(29, 26, 28);
+    --mc-fontColor:rgb(115, 92, 252);
+    --mc-baseButtonsPink: rgb(223, 45, 189);
+    --mc-baseButtomsPinkHover: rgb(223, 45, 189, 0.2);
+    --mc-baseButtonGreen: rgb(0, 234, 37);
 }
+
 .header{
     margin-top: 20px;
+    background-color: var(--mc-bgColor);
 }
 
 .header__links-tegs {
@@ -27,7 +34,7 @@ ul{
 }
 
 .header__links-tegs a{
-    color: rgb(115, 92, 252);
+    color: var(--mc-fontColor);
     margin-left: 18px;
     font-family: inherit;
     font-size: 16px;
@@ -60,7 +67,7 @@ ul{
     cursor: pointer;
     border-width: 2px;
     border-style: solid;
-    border-color: rgb(223, 45, 189);
+    border-color: var(--mc-baseButtonsPink);
     border-image: initial;
     transition: background-color 0.3s ease 0s;
 }
@@ -69,13 +76,13 @@ ul{
     cursor: pointer;
     border-width: 2px;
     border-style: solid;
-    border-color: rgb(0, 234, 37);
+    border-color: var(--mc-baseButtonGreen);
     border-image: initial;
     background: linear-gradient(253.67deg, rgb(173, 255, 0) 2.27%, rgb(0, 234, 37) 94.48%);
 }
 
 .header__links-buttons li:nth-child(1):hover {
-    background-color: rgb(223, 45, 189, 0.2);;
+    background-color: var(--mc-baseButtomsPinkHover);
 }
 
 .header__links-buttons li:nth-child(2):hover {
@@ -90,6 +97,12 @@ ul{
 #sign_up {
     color: black;
     font-weight: 600;
+}
+
+.main__banner{
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 
 .main__string {
@@ -132,7 +145,7 @@ ul{
 .main__string-show a {
     position: relative;
     padding-right: 20px;
-    color: rgb(0, 234, 37);
+    color: var(--mc-baseButtonGreen);
     font-size: 14px;
     transition: color 0.3s ease 0s;
     text-decoration: none;
@@ -157,6 +170,7 @@ ul{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
+    padding: 0px;
 }
 
 .grid-item {
@@ -202,7 +216,7 @@ ul{
     visibility: hidden;
 }
 
-.grid-item span {
+.grid-item .grid-item__header {
     position: absolute;
     color: white;
     bottom: 15px;
@@ -214,7 +228,7 @@ ul{
 
 .grid-item p {
     position: absolute;
-    color: rgb(223, 45, 189);
+    color: var(--mc-baseButtonsPink);
     opacity: 0;
     z-index: 4;
     font-size: 13px;
@@ -222,24 +236,28 @@ ul{
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: color 0.5s ease;
 }
 
 .grid-item:hover p{
     opacity: 1;
     filter: brightness(100%);
-    
 }
 
-.grid-item img {
+.grid-item p:hover{
+    color: var(--mc-fontColor);
+}
+
+.grid-item .grid-item__img {
     width: 100%;
     transition: filter 0.4s ease 0s;
 }
 
-.grid-item img:hover{
+.grid-item .grid-item__img:hover{
     filter: brightness(40%);
 }
 
-.grid-item:hover span{
+.grid-item:hover .grid-item__header{
     display: none;
 }
 
