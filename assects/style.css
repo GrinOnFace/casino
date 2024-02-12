@@ -155,10 +155,10 @@ ul{
     content: "";
     position: absolute;
     top: 4px;
-    right: -5px;
+    right: 0px;
     width: 16px;
     height: 16px;
-    background: url(https://daddycasinotop35.win/assets/arrow-circle-color.svg) no-repeat;
+    background: url(/assects/images/arrow.svg) no-repeat;
     transition: transform 0.6s ease 0s;
 }
 
